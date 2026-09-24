@@ -88,6 +88,13 @@
     transform-origin: right center;
   }
 
+  .mobile-theme-toggle .toggle-container {
+    width: 58px;
+    height: 42px;
+    cursor: pointer;
+    touch-action: manipulation;
+  }
+
   .mobile-theme-toggle .toggle-input {
     inset: 0;
     bottom: auto;
@@ -95,6 +102,8 @@
     width: 100%;
     height: 100%;
     transform: none;
+    z-index: 20;
+    cursor: pointer;
   }
 
   .mobile-theme-toggle .toggle-input:checked {
