@@ -200,15 +200,25 @@
     stroke-linejoin: round;
   }
 
-  .sidebar .nav a.active {
-    color: var(--accent);
-    background: transparent;
+  .sidebar .nav a.active,
+  .sidebar .nav a.active:hover,
+  .sidebar .nav a.active:focus-visible {
+    color: var(--accent) !important;
+    background: transparent !important;
     border-radius: 0;
+    box-shadow: none;
+  }
+
+  :root:not([data-theme='dark']) .sidebar .nav a.active,
+  :root:not([data-theme='dark']) .sidebar .nav a.active:hover,
+  :root:not([data-theme='dark']) .sidebar .nav a.active:focus-visible {
+    color: var(--accent) !important;
+    background: transparent !important;
   }
 
   .sidebar .nav a.active b,
   .sidebar .nav a.active .nav-icon {
-    color: var(--accent);
+    color: var(--accent) !important;
   }
 
   .sidebar .nav a.active b {
