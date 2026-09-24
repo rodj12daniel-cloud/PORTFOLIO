@@ -57,12 +57,12 @@ function BrandIcon({ name }) {
 function NavIcon({ name }) {
   const paths = {
     home: 'M3 10.8 12 3l9 7.8v9.7a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 20.5v-9.7Z',
+    projects: 'M4 7.5h6l1.8 2H20v9.5H4v-11.5Zm0 0V5h6l1.8 2',
+    about: 'M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm-7 8a7 7 0 0 1 14 0',
     education: 'M4 5h16v14H4V5Zm3 3h10M7 12h10M7 15h6',
   }
   const brandAssets = {
-    projects: ['https://thesvg.org/icons/github/default.svg', 'GitHub logo'],
     skills: ['https://thesvg.org/icons/react/default.svg', 'React logo'],
-    about: [profileImage, 'Rodj Rogacion'],
     contact: ['https://thesvg.org/icons/gmail/default.svg', 'Gmail logo'],
   }
   if (brandAssets[name]) return <img className={`nav-icon nav-brand-icon nav-brand-${name}`} src={brandAssets[name][0]} alt="" aria-hidden="true" />
@@ -168,7 +168,7 @@ function App() {
     <div className="site-shell">
       <aside className="sidebar">
         <a className="brand" href="#home" onClick={closeMenu} aria-label="Rodj Rogacion home">
-          <span className="brand-mark">R<span>.</span></span><span className="brand-label">Rodj Rogacion</span>
+          <span className="brand-label">Rodj Rogacion</span>
         </a>
         <div className="mobile-profile"><img src={profileImage} alt="Rodj Rogacion" /><div><strong>Rodj Rogacion <span className="verified">✓</span></strong><small>@rodj.rogacion · portfolio</small></div></div>
         <div className="mobile-theme-toggle"><Switch checked={darkMode} onChange={() => setDarkMode(!darkMode)} /></div>
