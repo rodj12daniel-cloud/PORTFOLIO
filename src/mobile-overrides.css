@@ -152,24 +152,40 @@
 
   .sidebar .nav a,
   .sidebar .nav a:hover,
+  .sidebar .nav a:focus-visible,
   .sidebar .nav a.active {
     min-width: 48px;
     padding: 8px 5px;
     flex-direction: column;
     gap: 3px;
     color: #dbe7f6;
-    background: transparent;
+    background: transparent !important;
+    box-shadow: none;
     font-size: 9px;
     text-align: center;
+  }
+
+  .sidebar .nav a:hover,
+  .sidebar .nav a:focus-visible {
+    color: #ffffff;
+    background: rgba(255, 255, 255, .1) !important;
+    border-radius: 12px;
+  }
+
+  :root:not([data-theme='dark']) .sidebar .nav a:hover,
+  :root:not([data-theme='dark']) .sidebar .nav a:focus-visible {
+    color: #102442;
+    background: rgba(16, 36, 66, .08) !important;
   }
 
   .sidebar .nav a b,
   .sidebar .nav a.active b,
   :root[data-theme='dark'] .sidebar .nav a b,
   :root[data-theme='dark'] .sidebar .nav a.active b {
-    width: 20px;
-    height: 20px;
-    color: #dbe7f6;
+    width: auto;
+    height: auto;
+    display: contents;
+    color: currentColor;
   }
 
   .sidebar .nav .nav-icon {
