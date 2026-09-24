@@ -164,9 +164,7 @@ function App() {
   return (
     <div className="site-shell">
       <aside className="sidebar">
-        <a className="brand" href="#home" onClick={closeMenu} aria-label="Rodj Rogacion home">
-          <span className="brand-label">Rodj Rogacion</span>
-        </a>
+        <a className="brand" href="#home" onClick={closeMenu} aria-label="Rodj Rogacion home" />
         <div className="mobile-profile"><img src={profileImage} alt="Rodj Rogacion" /><div><strong>Rodj Rogacion <span className="verified">✓</span></strong><small>@rodj.rogacion · portfolio</small></div></div>
         <div className="mobile-theme-toggle" onClick={() => setDarkMode(!darkMode)} role="button" tabIndex={0} aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'} onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); setDarkMode(!darkMode) } }}><Switch checked={darkMode} onChange={() => setDarkMode(!darkMode)} /></div>
         <div className="profile-orbit"><img src={profileImage} alt="Rodj Rogacion" /></div>
@@ -179,7 +177,7 @@ function App() {
         </button>
         <nav className={`nav ${menuOpen ? 'open' : ''}`}>
           {[['home', 'Home', 'home'], ['work', 'Projects', 'projects'], ['skills', 'Skills', 'skills'], ['about', 'About', 'about'], ['contact', 'Contact', 'contact']].map(([id, label, icon]) => (
-            <a key={id} className={activeSection === id ? 'active' : ''} href={`#${id}`} onClick={closeMenu}><b><NavIcon name={icon} /></b>{label}</a>
+            <a key={id} className={activeSection === id ? 'active' : ''} href={`#${id}`} onClick={closeMenu}>{id === 'home' ? <NavIcon name={icon} /> : <b><NavIcon name={icon} /></b>}{label}</a>
           ))}
         </nav>
         <div className="sidebar-bottom"><span className="status-dot" /> Open to opportunities</div>
