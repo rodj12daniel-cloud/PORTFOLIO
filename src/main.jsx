@@ -123,7 +123,7 @@ function Switch({ checked, onChange }) {
   return (
     <StyledWrapper>
       <div className="toggle-container">
-        <input className="toggle-input" type="checkbox" checked={checked} onChange={onChange} aria-label={checked ? 'Switch to light mode' : 'Switch to dark mode'} />
+        <input className="toggle-input" type="checkbox" checked={checked} onClick={(event) => event.stopPropagation()} onChange={onChange} aria-label={checked ? 'Switch to light mode' : 'Switch to dark mode'} />
         <div className="toggle-handle-wrapper"><div className="toggle-handle"><div className="toggle-handle-knob" /><div className="toggle-handle-bar-wrapper"><div className="toggle-handle-bar" /></div></div></div>
         <div className="toggle-base"><div className="toggle-base-inside" /></div>
       </div>
@@ -168,7 +168,7 @@ function App() {
           <span className="brand-label">Rodj Rogacion</span>
         </a>
         <div className="mobile-profile"><img src={profileImage} alt="Rodj Rogacion" /><div><strong>Rodj Rogacion <span className="verified">✓</span></strong><small>@rodj.rogacion · portfolio</small></div></div>
-        <div className="mobile-theme-toggle"><Switch checked={darkMode} onChange={() => setDarkMode(!darkMode)} /></div>
+        <div className="mobile-theme-toggle" onClick={() => setDarkMode(!darkMode)} role="button" tabIndex={0} aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'} onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); setDarkMode(!darkMode) } }}><Switch checked={darkMode} onChange={() => setDarkMode(!darkMode)} /></div>
         <div className="profile-orbit"><img src={profileImage} alt="Rodj Rogacion" /></div>
         <div className="profile-name">Rodj Rogacion <span className="verified">✓</span></div>
         <div className="profile-handle">@rodj.rogacion · portfolio</div>
