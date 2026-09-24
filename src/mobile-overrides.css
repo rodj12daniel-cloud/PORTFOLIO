@@ -179,17 +179,27 @@
   .sidebar .nav a.active b,
   :root[data-theme='dark'] .sidebar .nav a b,
   :root[data-theme='dark'] .sidebar .nav a.active b {
-    width: 20px;
-    height: 20px;
+    width: 26px;
+    height: 26px;
+    padding: 4px;
     color: #dbe7f6;
+    border-radius: 9px;
+    background: rgba(96, 115, 143, .12);
   }
 
+  .sidebar .nav a:nth-child(2) b { color: #4f8fff; background: rgba(79, 143, 255, .12); }
+  .sidebar .nav a:nth-child(3) b { color: #e28a36; background: rgba(226, 138, 54, .13); }
+  .sidebar .nav a:nth-child(4) b { color: #9a70d6; background: rgba(154, 112, 214, .13); }
+  .sidebar .nav a:nth-child(5) b { color: #40a889; background: rgba(64, 168, 137, .13); }
+  .sidebar .nav a.active b,
+  .sidebar .nav a.active:nth-child(n) b { color: #fff; background: rgba(255,255,255,.18); }
+
   .sidebar .nav .nav-icon {
-    width: 19px;
-    height: 19px;
+    width: 18px;
+    height: 18px;
     fill: none;
     stroke: currentColor;
-    stroke-width: 2;
+    stroke-width: 2.1;
     stroke-linecap: round;
     stroke-linejoin: round;
   }
