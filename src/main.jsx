@@ -177,7 +177,7 @@ function App() {
         </button>
         <nav className={`nav ${menuOpen ? 'open' : ''}`}>
           {[['home', 'Home', 'home'], ['work', 'Projects', 'projects'], ['skills', 'Skills', 'skills'], ['about', 'About', 'about'], ['contact', 'Contact', 'contact']].map(([id, label, icon]) => (
-            <a key={id} className={activeSection === id ? 'active' : ''} href={`#${id}`} onClick={closeMenu}>{id === 'home' ? <NavIcon name={icon} /> : <b><NavIcon name={icon} /></b>}{label}</a>
+            <a key={id} className={activeSection === id ? 'active' : ''} href={`#${id}`} onClick={closeMenu}><NavIcon name={icon} />{label}</a>
           ))}
         </nav>
         <div className="sidebar-bottom"><span className="status-dot" /> Open to opportunities</div>
