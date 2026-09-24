@@ -168,14 +168,16 @@
   .sidebar .nav a:hover,
   .sidebar .nav a:focus-visible {
     color: #ffffff;
-    background: rgba(255, 255, 255, .1) !important;
+    background: rgba(255, 255, 255, .18) !important;
     border-radius: 12px;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .22);
   }
 
   :root:not([data-theme='dark']) .sidebar .nav a:hover,
   :root:not([data-theme='dark']) .sidebar .nav a:focus-visible {
     color: #102442;
-    background: rgba(16, 36, 66, .08) !important;
+    background: rgba(16, 36, 66, .14) !important;
+    box-shadow: inset 0 0 0 1px rgba(16, 36, 66, .16);
   }
 
   .sidebar .nav a b,
