@@ -123,11 +123,11 @@ const StyledWrapper = styled.div`
 function Switch({ checked, onChange }) {
   return (
     <StyledWrapper>
-      <label className="toggle-container">
+      <div className="toggle-container">
         <input className="toggle-input" type="checkbox" checked={checked} onChange={onChange} aria-label={checked ? 'Switch to light mode' : 'Switch to dark mode'} />
-        <span className="toggle-handle-wrapper"><span className="toggle-handle"><span className="toggle-handle-knob" /><span className="toggle-handle-bar-wrapper"><span className="toggle-handle-bar" /></span></span></span>
-        <span className="toggle-base"><span className="toggle-base-inside" /></span>
-      </label>
+        <div className="toggle-handle-wrapper"><div className="toggle-handle"><div className="toggle-handle-knob" /><div className="toggle-handle-bar-wrapper"><div className="toggle-handle-bar" /></div></div></div>
+        <div className="toggle-base"><div className="toggle-base-inside" /></div>
+      </div>
     </StyledWrapper>
   )
 }
