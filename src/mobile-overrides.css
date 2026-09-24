@@ -15,8 +15,7 @@
   }
 
   .sidebar .brand {
-    margin: 0;
-    flex: 0 0 auto;
+    display: none;
   }
 
   .sidebar .brand-label,
