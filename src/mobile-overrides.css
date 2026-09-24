@@ -90,6 +90,8 @@
 
   .mobile-theme-toggle .toggle-input {
     inset: 0;
+    bottom: auto;
+    left: auto;
     width: 100%;
     height: 100%;
     transform: none;
