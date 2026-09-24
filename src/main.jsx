@@ -168,7 +168,7 @@ function App() {
     <div className="site-shell">
       <aside className="sidebar">
         <a className="brand" href="#home" onClick={closeMenu} aria-label="Rodj Rogacion home">
-          <span className="brand-label">Rodj Rogacion</span>
+          
         </a>
         <div className="mobile-profile"><img src={profileImage} alt="Rodj Rogacion" /><div><strong>Rodj Rogacion <span className="verified">✓</span></strong><small>@rodj.rogacion · portfolio</small></div></div>
         <div className="mobile-theme-toggle"><Switch checked={darkMode} onChange={() => setDarkMode(!darkMode)} /></div>
