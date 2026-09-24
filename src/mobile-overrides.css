@@ -193,6 +193,21 @@
     stroke-linejoin: round;
   }
 
+  .sidebar .nav .nav-brand-icon {
+    display: block;
+    object-fit: contain;
+    stroke: none;
+  }
+
+  .sidebar .nav .nav-brand-about {
+    border-radius: 50%;
+    object-position: center 60%;
+  }
+
+  .sidebar .nav a.active .nav-brand-icon {
+    filter: brightness(0) invert(1);
+  }
+
   .sidebar .nav a.active {
     color: #fff;
     background: var(--accent);

@@ -57,12 +57,15 @@ function BrandIcon({ name }) {
 function NavIcon({ name }) {
   const paths = {
     home: 'M3 10.8 12 3l9 7.8v9.7a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 20.5v-9.7Z',
-    projects: 'M3 6.5A1.5 1.5 0 0 1 4.5 5h5l2 2h8A1.5 1.5 0 0 1 21 8.5v9A1.5 1.5 0 0 1 19.5 19h-15A1.5 1.5 0 0 1 3 17.5v-11Z',
-    skills: 'M12 3 20 7.5v9L12 21l-8-4.5v-9L12 3Zm0 4L7.5 9.5 12 12l4.5-2.5L12 7Zm-4.5 6v2L12 17.5l4.5-2.5v-2L12 15.5 7.5 13Z',
-    about: 'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm0 4.2a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4ZM10.8 11h2.4v6h-2.4v-6Z',
-    contact: 'M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm0 2v.4l8 4.8 8-4.8V7l-8 4.8L4 7Z',
     education: 'M4 5h16v14H4V5Zm3 3h10M7 12h10M7 15h6',
   }
+  const brandAssets = {
+    projects: ['https://thesvg.org/icons/github/default.svg', 'GitHub logo'],
+    skills: ['https://thesvg.org/icons/react/default.svg', 'React logo'],
+    about: [profileImage, 'Rodj Rogacion'],
+    contact: ['https://thesvg.org/icons/gmail/default.svg', 'Gmail logo'],
+  }
+  if (brandAssets[name]) return <img className={`nav-icon nav-brand-icon nav-brand-${name}`} src={brandAssets[name][0]} alt="" aria-hidden="true" />
   return <svg className="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d={paths[name]} /></svg>
 }
 
