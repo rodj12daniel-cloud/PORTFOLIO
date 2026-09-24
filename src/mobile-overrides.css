@@ -274,29 +274,26 @@
   }
 
   .dashboard-grid {
-    display: flex;
-    grid-template-columns: none;
-    grid-template-rows: none;
-    gap: 12px;
-    width: calc(100vw - 5vw);
-    margin-right: -5vw;
-    padding-right: 5vw;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-  }
-
-  .dashboard-grid::-webkit-scrollbar {
-    display: none;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
   }
 
   .dash-card,
   .projects-card,
   .contact-card {
-    flex: 0 0 82vw;
+    min-width: 0;
+    min-height: 190px;
     grid-column: auto;
-    min-height: 300px;
-    scroll-snap-align: start;
+  }
+
+  .projects-card {
+    grid-column: 1 / -1;
+    min-height: 250px;
   }
 
   .dashboard-grid .dash-card + .dash-card::before {
