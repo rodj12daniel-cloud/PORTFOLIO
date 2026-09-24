@@ -75,6 +75,7 @@
     width: 58px;
     height: 42px;
     margin-left: auto;
+    overflow: visible;
     position: relative;
     z-index: 25;
   }
@@ -82,40 +83,47 @@
   .mobile-theme-toggle .toggle-container {
     position: absolute;
     inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
     width: 58px;
     height: 42px;
+    transform: none;
     cursor: pointer;
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
   }
 
   .mobile-theme-toggle .toggle-input {
-    position: absolute;
     inset: 0;
-    z-index: 5;
+    z-index: 10;
+    display: block;
     width: 100%;
     height: 100%;
-    opacity: 0;
     transform: none;
     cursor: pointer;
     touch-action: manipulation;
+  }
+
+  .mobile-theme-toggle .toggle-input:checked {
+    transform: none;
+  }
+
+  .mobile-theme-toggle .toggle-base {
+    position: absolute;
+    top: 6px;
+    right: 0;
+    z-index: 0;
+    box-sizing: border-box;
+    width: 58px;
+    height: 30px;
+    padding: 4px;
   }
 
   .mobile-theme-toggle .toggle-handle-wrapper {
     display: none;
   }
 
-  .mobile-theme-toggle .toggle-base {
+  .mobile-theme-toggle .toggle-base-inside {
     position: relative;
-    z-index: 1;
-    display: block;
-    box-sizing: border-box;
-    width: 58px;
-    height: 30px;
-    padding: 4px;
   }
 
   .mobile-theme-toggle .toggle-base-inside::before {
@@ -128,7 +136,7 @@
     border-radius: 50%;
     background: radial-gradient(circle at 68% 28%, #fedee2 4%, #d63534 18%, #a81a1a 62%, #d63534 100%);
     box-shadow: inset 0 0 5px rgb(255 255 255 / .35), 0 1px 2px rgb(0 0 0 / .3);
-    transition: right .24s cubic-bezier(.65, 1.35, .5, 1);
+    transition: right .24s cubic-bezier(.65, 1.35, .5, 1), background .24s ease;
   }
 
   .mobile-theme-toggle .toggle-input:checked ~ .toggle-base .toggle-base-inside::before {
