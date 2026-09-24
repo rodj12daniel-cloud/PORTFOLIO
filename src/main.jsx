@@ -57,15 +57,12 @@ function BrandIcon({ name }) {
 function NavIcon({ name }) {
   const paths = {
     home: 'M3 10.8 12 3l9 7.8v9.7a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 20.5v-9.7Z',
-    projects: 'M4 7.5h6l1.8 2H20v9.5H4v-11.5Zm0 0V5h6l1.8 2',
-    about: 'M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm-7 8a7 7 0 0 1 14 0',
+    projects: 'M3 6.5A1.5 1.5 0 0 1 4.5 5h5l2 2h8A1.5 1.5 0 0 1 21 8.5v9A1.5 1.5 0 0 1 19.5 19h-15A1.5 1.5 0 0 1 3 17.5v-11Z',
+    skills: 'M12 3 20 7.5v9L12 21l-8-4.5v-9L12 3Zm0 4L7.5 9.5 12 12l4.5-2.5L12 7Zm-4.5 6v2L12 17.5l4.5-2.5v-2L12 15.5 7.5 13Z',
+    about: 'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm0 4.2a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4ZM10.8 11h2.4v6h-2.4v-6Z',
+    contact: 'M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm0 2v.4l8 4.8 8-4.8V7l-8 4.8L4 7Z',
     education: 'M4 5h16v14H4V5Zm3 3h10M7 12h10M7 15h6',
   }
-  const brandAssets = {
-    skills: ['https://thesvg.org/icons/react/default.svg', 'React logo'],
-    contact: ['https://thesvg.org/icons/gmail/default.svg', 'Gmail logo'],
-  }
-  if (brandAssets[name]) return <img className={`nav-icon nav-brand-icon nav-brand-${name}`} src={brandAssets[name][0]} alt="" aria-hidden="true" />
   return <svg className="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d={paths[name]} /></svg>
 }
 
@@ -168,7 +165,7 @@ function App() {
     <div className="site-shell">
       <aside className="sidebar">
         <a className="brand" href="#home" onClick={closeMenu} aria-label="Rodj Rogacion home">
-          
+          <span className="brand-mark">R<span>.</span></span><span className="brand-label">Rodj Rogacion</span>
         </a>
         <div className="mobile-profile"><img src={profileImage} alt="Rodj Rogacion" /><div><strong>Rodj Rogacion <span className="verified">✓</span></strong><small>@rodj.rogacion · portfolio</small></div></div>
         <div className="mobile-theme-toggle"><Switch checked={darkMode} onChange={() => setDarkMode(!darkMode)} /></div>
@@ -192,7 +189,7 @@ function App() {
         <section className="dashboard-home" id="home">
           <div className="dashboard-top reveal"><div><p className="eyebrow"><span className="status-dot" /> Aspiring web developer · UI/UX designer</p><h1>Build it with<br /><em>intention.</em></h1><p className="hero-intro">I build modern, responsive and user-focused websites using clean code and thoughtful design.</p></div><div className="dashboard-actions"><Switch checked={darkMode} onChange={() => setDarkMode(!darkMode)} /><a className="button button-primary" href="#contact">Get in touch <Arrow /></a></div></div>
           <div className="tool-strip reveal"><div className="strip-label"><small>Daily drivers</small><strong>Tools I work with</strong></div><div className="tool-items"><div className="tool-items-track">{[0, 1].map(copy => skills.map(skill => <span key={`${copy}-${skill}`}><TechLogo skill={skill} />{skill}</span>))}</div></div></div>
-          <div className="mobile-explore-heading"><strong>Explore</strong><a href="#work">View all <Arrow /></a></div>
+          <div className="mobile-explore-heading"><strong>Explore</strong><a href="#work">Swipe <Arrow /></a></div>
           <div className="dashboard-grid">
             <a className="dash-card projects-card reveal" href="#work"><div className="card-heading"><span className="card-icon"><NavIcon name="projects" /></span><div><h2>Projects</h2><p>Selected work built to solve real problems.</p></div></div><div className="project-preview"><div className="browser-chrome"><i /><i /><i /><span>client-sigma-liard.vercel.app</span></div><img src={ledgerlyImage} alt="Ledgerly finance dashboard" /></div><span className="card-link">Explore work <Arrow /></span></a>
             <a className="dash-card about-card reveal" href="#about"><div className="card-heading"><span className="card-icon"><NavIcon name="about" /></span><div><h2>About</h2><p>Who I am and how I work.</p></div></div><div className="about-mark"><span>R</span><i /></div><span className="card-link">Get to know me <Arrow /></span></a>
