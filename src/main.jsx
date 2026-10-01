@@ -1,6 +1,5 @@
 import { StrictMode, useEffect, useState } from 'react'
 import { createRoot } from 'react-dom/client'
-import styled from 'styled-components'
 import './styles.css'
 import './mobile-overrides.css'
 import profileImage from './images/7389f101-5846-4074-950e-fc58a0f107ee.jpg'
@@ -103,66 +102,9 @@ function TechLogo({ skill }) {
   return <img className="tech-logo" src={`https://cdn.simpleicons.org/${slug}/${color}`} alt={`${skill} logo`} />
 }
 
-const StyledWrapper = styled.div`
-  .toggle-container {
-    --knob-size: 1.75em;
-    display: flex;
-    justify-content: center;
-    position: relative;
-  }
-
-  .toggle-input {
-    position: absolute;
-    z-index: 2;
-    bottom: 132.5%;
-    border-radius: 50%;
-    transform: rotate(-25deg);
-    transform-origin: 50% 4.75em;
-    width: var(--knob-size);
-    height: var(--knob-size);
-    opacity: 0;
-    font: inherit;
-    transition: transform .24s cubic-bezier(.65, 1.35, .5, 1);
-    cursor: pointer;
-  }
-
-  .toggle-input:checked { transform: rotate(25deg); }
-  .toggle-handle-wrapper { position: absolute; z-index: 1; bottom: -135%; -webkit-mask-image: linear-gradient(to bottom, #000 62.125%, transparent 50%); mask-image: linear-gradient(to bottom, #000 62.125%, transparent 50%); width: 200%; overflow: hidden; }
-  .toggle-handle { display: flex; flex-direction: column; align-items: center; transform: rotate(-25deg); transform-origin: bottom center; transition: transform .24s cubic-bezier(.65, 1.35, .5, 1); }
-  .toggle-input:checked + .toggle-handle-wrapper > .toggle-handle { transform: rotate(25deg); }
-  .toggle-handle-knob { position: relative; z-index: 1; border-radius: 50%; width: var(--knob-size); height: var(--knob-size); background-image: radial-gradient(farthest-corner at 70% 30%, #fedee2 4%, #d63534 12% 24%, #a81a1a 50% 65%, #d63534 75%); transition: transform .24s cubic-bezier(.65, 1.35, .5, 1); }
-  .toggle-input:checked + .toggle-handle-wrapper .toggle-handle-knob { transform: rotate(-90deg); }
-  .toggle-handle-knob::after { content: ''; position: absolute; inset: 0; border-radius: inherit; box-shadow: inset 0 0 8px 2px rgb(255 255 255 / .4); opacity: 0; transition: opacity .2s; }
-  .toggle-input:hover + .toggle-handle-wrapper .toggle-handle-knob::after, .toggle-input:focus-visible + .toggle-handle-wrapper .toggle-handle-knob::after { opacity: 1; }
-  .toggle-handle-bar-wrapper { position: relative; width: .5em; height: 3em; }
-  .toggle-handle-bar { position: absolute; top: calc(var(--knob-size) / 2 * -1); left: 0; width: 100%; height: calc(100% + var(--knob-size) / 2); background-image: linear-gradient(to right, #777475, #a4a4a4, #fff 45% 55%, #a4a4a4, #777475); background-position-x: .06125em; transition: background-position-x .24s cubic-bezier(.65, 1.35, .5, 1); box-shadow: inset 0 1em .25em rgb(0 0 0 / .4); }
-  .toggle-input:checked + .toggle-handle-wrapper .toggle-handle-bar { background-position-x: -.06125em; }
-  .toggle-base { position: relative; border-radius: 3.125em; padding: .25em; width: 3.5em; height: 1.125em; background-color: #fff; background-image: linear-gradient(to bottom, #fff, #d7d7d7); box-shadow: 0 -.25em .5em #fff, 0 .25em .5em #d7d7d7; }
-  .toggle-base-inside { position: relative; border-radius: inherit; width: 100%; height: 100%; background-image: linear-gradient(to bottom, #a6a6a6, #7d7d7d); box-shadow: inset 0 .0625em rgb(255 255 255 / .2), inset 0 -.03125em rgb(255 255 255 / 1), inset 0 -.0625em .25em rgb(0 0 0 / .1); }
-  .toggle-base-inside::after { content: ''; position: absolute; inset: 0; border-radius: inherit; background-image: linear-gradient(to bottom, #5b9dff, #2864d7); box-shadow: inherit; opacity: 0; transition: opacity .24s cubic-bezier(.65, 1.35, .5, 1); }
-  .toggle-input:checked ~ .toggle-base .toggle-base-inside::after { opacity: 1; }
-`
-
-function Switch({ checked, onChange }) {
-  return (
-    <StyledWrapper>
-      <div className="toggle-container">
-        <input className="toggle-input" type="checkbox" checked={checked} onChange={onChange} aria-label={checked ? 'Switch to light mode' : 'Switch to dark mode'} />
-        <div className="toggle-handle-wrapper"><div className="toggle-handle"><div className="toggle-handle-knob" /><div className="toggle-handle-bar-wrapper"><div className="toggle-handle-bar" /></div></div></div>
-        <div className="toggle-base"><div className="toggle-base-inside" /></div>
-      </div>
-    </StyledWrapper>
-  )
-}
-
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
-  const [darkMode, setDarkMode] = useState(false)
-
-  useEffect(() => {
-    document.documentElement.dataset.theme = darkMode ? 'dark' : 'light'
-  }, [darkMode])
 
   useEffect(() => {
     const sections = document.querySelectorAll('section[id]')
@@ -188,11 +130,6 @@ function App() {
   return (
     <div className="site-shell">
       <aside className="sidebar">
-        <a className="brand" href="#home" onClick={closeMenu} aria-label="Rodj Rogacion home">
-          <span className="brand-mark">R<span>.</span></span><span className="brand-label">Rodj Rogacion</span>
-        </a>
-        <div className="mobile-profile"><img src={profileImage} alt="Rodj Rogacion" /><div><strong>Rodj Rogacion <span className="verified">✓</span></strong><small>@rodj.rogacion · portfolio</small></div></div>
-        <div className="mobile-theme-toggle"><Switch checked={darkMode} onChange={() => setDarkMode(!darkMode)} /></div>
         <div className="profile-orbit"><img src={profileImage} alt="Rodj Rogacion" /></div>
         <div className="profile-name">Rodj Rogacion <span className="verified">✓</span></div>
         <div className="profile-handle">@rodj.rogacion · portfolio</div>
@@ -211,7 +148,7 @@ function App() {
 
       <main>
         <section className="dashboard-home" id="home">
-          <div className="dashboard-top reveal"><div><p className="eyebrow"><span className="status-dot" /> Aspiring web developer · UI/UX designer</p><h1>Build it with<br /><em>intention.</em></h1><p className="hero-intro">I build modern, responsive and user-focused websites using clean code and thoughtful design.</p></div><div className="dashboard-actions"><Switch checked={darkMode} onChange={() => setDarkMode(!darkMode)} /><a className="button button-primary" href="#contact">Get in touch <Arrow /></a></div></div>
+          <div className="dashboard-top reveal"><div><p className="eyebrow"><span className="status-dot" /> Aspiring web developer · UI/UX designer</p><h1>Build it with<br /><em>intention.</em></h1><p className="hero-intro">I build modern, responsive and user-focused websites using clean code and thoughtful design.</p></div><div className="dashboard-actions"><a className="button button-primary" href="#contact">Get in touch <Arrow /></a></div></div>
           <div className="tool-strip reveal"><div className="strip-label"><small>Daily drivers</small><strong>Tools I work with</strong></div><div className="tool-items"><div className="tool-items-track">{[0, 1].map(copy => skills.map(skill => <span key={`${copy}-${skill}`}><TechLogo skill={skill} />{skill}</span>))}</div></div></div>
           <div className="mobile-explore-heading"><strong>Explore</strong><a href="#work">Swipe <Arrow /></a></div>
           <div className="dashboard-grid">

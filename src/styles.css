@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
 
-:root { --ink:#101820; --paper:#f5f3ee; --muted:#47515d; --line:rgba(16,24,32,.12); --lime:#101820; --coral:#101820; --sky:#101820; --display:'Manrope', sans-serif; --mono:'Manrope', sans-serif; }
+:root { --ink:#1d4ed8; --paper:#f5f3ee; --muted:#47515d; --line:rgba(29,78,216,.12); --lime:#1d4ed8; --coral:#1d4ed8; --sky:#1d4ed8; --display:'Manrope', sans-serif; --mono:'Manrope', sans-serif; }
 * { box-sizing:border-box; }
 html { scroll-behavior:smooth; }
 body { margin:0; background:var(--paper); color:var(--ink); font-family:var(--display); -webkit-font-smoothing:antialiased; }
@@ -33,7 +33,7 @@ footer { border-top:1px solid var(--line); padding:25px 5vw; display:flex; justi
 .sidebar-bottom .status-dot { background:var(--ink); box-shadow:none; }
 .status-dot { box-shadow:none; }
 :root[data-theme='dark'] .about-card { background:var(--paper); }
-html:root { --accent:#101820; }
+html:root { --accent:#1d4ed8; }
 body .sidebar-bottom .status-dot { background:var(--ink); }
 html:root:not([data-theme='dark']) .contact-email { color:var(--ink); border-color:var(--ink); }
 body .work .section-label span,body .work-heading h2 span { color:var(--ink); }
@@ -48,8 +48,8 @@ html:root[data-theme='dark'] .about-card { background:var(--paper); }
 .project-preview { padding:0; background:var(--paper); }.project-preview .browser-chrome { height:24px; }.project-preview img { width:100%; height:calc(100% - 24px); display:block; object-fit:contain; object-position:center; border-radius:0 0 6px 6px; background:var(--paper); }
 
 /* Dashboard home */
-:root { --surface:#f5f3ee; --panel:#f5f3ee; --panel-soft:#f5f3ee; --ink-soft:#47515d; --accent:#101820; --accent-soft:#f5f3ee; --shadow:none; }
-:root[data-theme='dark'] { --paper:#f5f3ee; --ink:#101820; --surface:#f5f3ee; --panel:#f5f3ee; --panel-soft:#f5f3ee; --ink-soft:#47515d; --line:rgba(16,24,32,.12); --accent:#101820; --accent-soft:#f5f3ee; --shadow:none; }
+:root { --surface:#f5f3ee; --panel:#f5f3ee; --panel-soft:#f5f3ee; --ink-soft:#47515d; --accent:#1d4ed8; --accent-soft:#f5f3ee; --shadow:none; }
+:root[data-theme='dark'] { --paper:#f5f3ee; --ink:#1d4ed8; --surface:#f5f3ee; --panel:#f5f3ee; --panel-soft:#f5f3ee; --ink-soft:#47515d; --line:rgba(29,78,216,.12); --accent:#1d4ed8; --accent-soft:#f5f3ee; --shadow:none; }
 body { background:var(--surface); color:var(--ink); transition:background .3s ease,color .3s ease; }
 :root[data-theme='dark'] body { color:var(--ink); }
 .site-shell { min-height:100vh; background:var(--surface); }
