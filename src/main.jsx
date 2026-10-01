@@ -7,10 +7,34 @@ import profileImage from './images/7389f101-5846-4074-950e-fc58a0f107ee.jpg'
 import ledgerlyImage from './images/ledgerly.jpg'
 import footballImage from './images/football90.jpg'
 import endlessImage from './images/endless.jpg'
+import tokyoImage from './images/welcome to tokyo.jpg'
+import mfImage from './images/mf.jpg'
 
 const projects = [
   {
     number: '01',
+    name: 'Tokyo, Beyond the City',
+    type: 'Travel / Landing page',
+    description: 'A warm, lifestyle-driven travel experience that highlights Tokyo neighborhoods, culture, and memorable city discoveries beyond the usual tourist route.',
+    technologies: ['HTML', 'CSS', 'JavaScript', 'Vercel'],
+    link: 'https://welcometotokyo.vercel.app/',
+    accent: 'sky',
+    image: tokyoImage,
+    short: 'TOKYO',
+  },
+  {
+    number: '02',
+    name: 'MF Customs Brokerage',
+    type: 'Trade / Website',
+    description: 'A clearer, more professional customs brokerage website built to make trade services easier to understand, trust, and access.',
+    technologies: ['HTML', 'CSS', 'JavaScript', 'React', 'Vercel'],
+    link: 'https://mf-customs-brokerage.vercel.app/index.html',
+    accent: 'lime',
+    image: mfImage,
+    short: 'MF',
+  },
+  {
+    number: '03',
     name: 'Ledgerly',
     type: 'Finance / Web app',
     description: 'A modern personal finance and expense tracking web application for wallets, expenses, multiple currencies, analytics, and net worth.',
@@ -20,7 +44,7 @@ const projects = [
     image: ledgerlyImage,
   },
   {
-    number: '02',
+    number: '04',
     name: 'Football 90',
     type: 'Commerce / Web store',
     description: 'A football jersey e-commerce experience with club and national team collections, product browsing, and shopping cart functionality.',
@@ -30,7 +54,7 @@ const projects = [
     image: footballImage,
   },
   {
-    number: '03',
+    number: '05',
     name: 'Endless Grind',
     type: 'Capstone / Management system',
     description: 'A fitness management web application for memberships, training goals, and appointment scheduling through one centralized platform.',
@@ -218,9 +242,11 @@ function App() {
             {projects.map((project) => (
               <article className={`project project-${project.accent} reveal`} key={project.number}>
                   <div className="project-visual">
-                    <div className="browser-frame"><div className="browser-chrome"><i /><i /><i /><span>{project.name.toLowerCase().replaceAll(' ', '')}.vercel.app</span></div><img className="project-image" src={project.image} alt={`${project.name} website`} /></div>
-                  <div className="project-ui ui-top"><span>{project.number} / PROJECT</span><span className="ui-dot" /></div>
-                  <div className="project-ui ui-bottom"><span>{project.type}</span><span>RODJ ROGACION</span></div>
+                    {project.image ? (
+                      <div className="browser-frame"><div className="browser-chrome"><i /><i /><i /><span>{project.name.toLowerCase().replaceAll(' ', '')}.vercel.app</span></div><img className="project-image" src={project.image} alt={`${project.name} website`} /></div>
+                    ) : (
+                      <div className="project-art"><span className="art-word">{project.short}</span><span className="art-ring" /></div>
+                    )}
                 </div>
                 <div className="project-info">
                   <div className="project-meta"><span>{project.number}</span><span>{project.type}</span></div>
